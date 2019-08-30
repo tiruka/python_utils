@@ -56,3 +56,36 @@ def elapsed_time_with_args(func, *dargs, **dkwargs):
         logger.info(f'func_name:{func_name} ended: elapsed_time {t}')
         return result
     return wrapper
+
+
+def memoize(func):
+    '''
+    Equal to functools.lru_cache decorator.
+    After this makes an arg of a decorated function key,
+    and a returned value of the decorated function value,
+    it have cache them as dict obj.
+    The below is how to use this decorator.
+    The 'first run' takes a lot of time, and 'next run' ends very quickly.
+    #####################
+    @memoize
+    def long_func(n):
+        r = 0
+        for i in range(10000000):
+            r += n * i
+        return r
+
+    print('first run')
+    for i in range(10):
+        print(long_func(i))
+
+    print('next run')
+    for i in range(10):
+        print(long_func(i))
+    #####################
+    '''
+    memo = {}
+    def wrapper(r):
+        if r not in memo:
+            memo[r] = func(r)
+        return memo[r]
+    return wrapper
