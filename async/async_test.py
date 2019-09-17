@@ -118,6 +118,38 @@
 # ]))
 # loop.close()
 ###########################
+# how to worker async function and to get the returns
+# import asyncio
+# import time
+# import aiohttp
+# import requests
+
+# loop = asyncio.get_event_loop()
+
+# async def hello(url):
+#     async with aiohttp.ClientSession() as session:
+#         async with session.get(url) as response:
+#             response = await response.read()
+#             print(response)
+#             print(time.time())
+#             return 'foobar'
+
+# async def deal(n):
+#     print(f'deal {n}')
+
+# r = loop.run_until_complete(asyncio.wait([
+#     hello("https://httpbin.org/headers"),
+#     deal(1),
+#     hello("https://httpbin.org/headers"),
+# ]))
+
+# for i in r:
+#     print(i)
+#     for j in i:
+#         print(j.result())
+# loop.close()
+
+###########################
 # async lock
 
 # import asyncio
