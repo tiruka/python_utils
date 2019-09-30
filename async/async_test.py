@@ -138,9 +138,9 @@
 #     print(f'deal {n}')
 
 # r = loop.run_until_complete(asyncio.wait([
-#     hello("https://httpbin.org/headers"),
+#     # hello("https://httpbin.org/headers"),
 #     deal(1),
-#     hello("https://httpbin.org/headers"),
+#     # hello("https://httpbin.org/headers"),
 # ]))
 
 # for i in r:
