@@ -60,7 +60,7 @@ def elapsed_time_with_args(func, *dargs, **dkwargs):
 
 def memoize(func):
     '''
-    Equal to functools.lru_cache decorator.
+    Almost Equal to functools.lru_cache decorator in terms of what to do.
     After this makes an arg of a decorated function key,
     and a returned value of the decorated function value,
     it have cache them as dict obj.
